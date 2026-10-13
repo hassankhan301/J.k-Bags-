@@ -1,0 +1,6 @@
+<?php
+require "includes/db.php"; $id=(int)($_GET['id']??0); $stmt=$conn->prepare("SELECT * FROM products WHERE id=?"); $stmt->bind_param("i",$id); $stmt->execute(); $p=stmt_result($stmt)->fetch_assoc();
+if(!$p){ header("Location: products.php"); exit; } $pageTitle=$p['name']." | J.K BAGS"; require "includes/header.php";
+?>
+<section class="section white"><div class="container detail"><div><img src="<?=e($p['image'])?>" alt="<?=e($p['name'])?>" onerror="this.onerror=null;this.src='assets/images/products/bag-default.svg';"></div><div><p class="eyebrow"><?=e($p['category'])?></p><h1><?=e($p['name'])?></h1><h3 class="price">PKR <?=number_format($p['price'])?></h3><p><?=e($p['description'])?></p><p class="stock"><?=($p['stock']>0)?"In Stock":"Out of Stock"?></p><div class="qty"><label>Quantity</label><input id="qty" type="number" min="1" max="<?=max(1,$p['stock'])?>" value="1" <?=((int)$p['stock']<1)?'disabled':''?>></div><button class="btn-gold border-0" onclick="addCart(<?=$p['id']?>, document.getElementById('qty').value)" <?=((int)$p['stock']<1)?'disabled':''?>><?=((int)$p['stock']<1)?'SOLD OUT':'ADD TO BAG'?> <i class="fa-solid fa-bag-shopping"></i></button></div></div></section>
+<?php require "includes/footer.php"; ?>

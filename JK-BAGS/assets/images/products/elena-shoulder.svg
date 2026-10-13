@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-labelledby="title desc">
+<title id="title">Elena Shoulder Bag</title><desc id="desc">Stylized boutique handbag product illustration</desc>
+<defs>
+ <linearGradient id="back" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e0eadf"/><stop offset="1" stop-color="#fffaf9"/></linearGradient>
+ <radialGradient id="glow"><stop stop-color="#fff" stop-opacity=".92"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+ <linearGradient id="leather" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#596f5c"/><stop offset=".5" stop-color="#596f5c"/><stop offset="1" stop-color="#5e3b4b" stop-opacity=".65"/></linearGradient>
+ <linearGradient id="leatherShade" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#596f5c"/><stop offset="1" stop-color="#4c293b" stop-opacity=".8"/></linearGradient>
+ <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f5e3aa"/><stop offset=".5" stop-color="#b8893c"/><stop offset="1" stop-color="#fff0c3"/></linearGradient>
+ <filter id="shadow" x="-.3" y="-.3" width="1.6" height="1.7"><feGaussianBlur stdDeviation="13"/></filter>
+</defs>
+<rect width="600" height="600" rx="28" fill="url(#back)"/><circle cx="120" cy="128" r="155" fill="url(#glow)" opacity=".9"/><circle cx="508" cy="470" r="170" fill="#fff" opacity=".36"/>
+<path d="M62 447 C115 403 157 404 197 429" stroke="#fff" stroke-width="2" opacity=".65" fill="none"/><path d="M425 110 C468 143 492 181 504 230" stroke="#fff" stroke-width="2" opacity=".55" fill="none"/>
+<ellipse cx="300" cy="470" rx="175" ry="30" fill="#57374b" opacity=".17" filter="url(#shadow)"/>
+<path d="M218 253 C218 123 382 123 382 253" fill="none" stroke="url(#leatherShade)" stroke-width="24" stroke-linecap="round"/><path d="M229 249 C229 145 371 145 371 249" fill="none" stroke="#f8e1ce" stroke-width="5" stroke-linecap="round" opacity=".72"/>
+<path d="M158 277 Q158 252 185 246 L415 246 Q442 252 442 277 L424 420 Q422 444 395 444 L205 444 Q178 444 176 420 Z" fill="url(#leather)" stroke="#5e3447" stroke-opacity=".22" stroke-width="3"/>
+<path d="M194 278 Q300 303 406 278" fill="none" stroke="#fff1e8" stroke-opacity=".7" stroke-width="4"/>
+<path d="M166 288 Q300 316 434 288 L427 347 Q300 369 173 347 Z" fill="url(#leatherShade)" opacity=".45"/>
+<path d="M190 300 Q300 323 410 300" fill="none" stroke="#fff3e6" stroke-opacity=".42" stroke-width="3"/>
+<path d="M199 285 L188 410 Q188 423 203 426" fill="none" stroke="#fff" stroke-opacity=".25" stroke-width="4"/>
+<path d="M400 285 L411 410 Q411 423 396 426" fill="none" stroke="#311d28" stroke-opacity=".12" stroke-width="4"/>
+<rect x="282" y="330" width="36" height="42" rx="7" fill="url(#metal)"/><path d="M293 339 H307 V362 H293 Z" fill="#f8e9cc" opacity=".95"/>
+<circle cx="212" cy="281" r="5" fill="url(#metal)"/><circle cx="388" cy="281" r="5" fill="url(#metal)"/>
+<text x="300" y="510" text-anchor="middle" font-family="Georgia,serif" font-size="18" letter-spacing="4" fill="#6f4b62" opacity=".83">J.K BAGS</text>
+<path d="M250 528 H350" stroke="#c89aaf" stroke-width="2" stroke-linecap="round"/>
+</svg>

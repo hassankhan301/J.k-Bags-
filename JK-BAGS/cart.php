@@ -1,0 +1,9 @@
+<?php
+require "includes/db.php";
+if(isset($_GET['remove'])){ $id=(int)$_GET['remove']; unset($_SESSION['cart'][$id]); header("Location: cart.php"); exit; }
+$ids=array_keys($_SESSION['cart']??[]); $items=[]; $total=0;
+if($ids){ $in=implode(',',array_fill(0,count($ids),'?')); $types=str_repeat('i',count($ids)); $stmt=$conn->prepare("SELECT * FROM products WHERE id IN ($in)"); $stmt->bind_param($types,...$ids); $stmt->execute(); $r=stmt_result($stmt); while($p=$r->fetch_assoc()){ $q=(int)$_SESSION['cart'][$p['id']]; $p['qty']=$q; $p['line']=$q*$p['price']; $total+=$p['line']; $items[]=$p; }}
+$pageTitle="Shopping Bag | J.K BAGS"; require "includes/header.php"; ?>
+<section class="section white"><div class="container narrow"><div class="heading"><p class="eyebrow">J.K BAGS</p><h2>Your Shopping Bag</h2><span></span></div>
+<?php if(!$items): ?><div class="empty"><i class="fa-solid fa-bag-shopping"></i><h3>Your bag is empty</h3><a class="btn-gold" href="products.php">SHOP BAGS</a></div>
+<?php else: ?><div class="cart-list"><?php foreach($items as $p): ?><div class="cart-row"><img src="<?=e($p['image'])?>" alt="<?=e($p['name'])?>" onerror="this.onerror=null;this.src='assets/images/products/bag-default.svg';"><div><h3><?=e($p['name'])?></h3><p><?=e($p['category'])?></p><p>Quantity: <?=$p['qty']?></p></div><strong>PKR <?=number_format($p['line'])?></strong><a href="cart.php?remove=<?=$p['id']?>"><i class="fa-solid fa-trash"></i></a></div><?php endforeach; ?></div><div class="cart-summary"><span>Subtotal</span><strong>PKR <?=number_format($total)?></strong><a class="btn-gold" href="checkout.php">PROCEED TO CHECKOUT</a></div><?php endif; ?></div></section><?php require "includes/footer.php"; ?>
